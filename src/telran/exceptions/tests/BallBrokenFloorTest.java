@@ -17,25 +17,13 @@ public class BallBrokenFloorTest {
     }
 
     private int getMinBrokenFloor(BallBrokenFloor ballBrokenFloor) {
-        int res = 0;
-        try {
-            res = findBrokenFloor(ballBrokenFloor, N_FLOORS);
-        } catch (Exception e) {
-            System.out.println("Wrong number of floors");
-            e.printStackTrace();
-        }
-
-        return res;
-    }
-
-    public static int findBrokenFloor(BallBrokenFloor ball, int nFloors) throws Exception {
         int low = 1;
-        int high = nFloors;
+        int high = N_FLOORS;
 
         while (low < high) {
             int mid = (low + high) / 2;
             try {
-                ball.checkFloor(mid);
+                ballBrokenFloor.checkFloor(mid);
                 low = mid + 1;
             } catch (Exception e) {
                 high = mid;
