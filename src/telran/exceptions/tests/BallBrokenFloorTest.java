@@ -9,10 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BallBrokenFloorTest {
     private static final int N_FLOORS = 100;
-    BallBrokenFloor ballBrokenFloor = new BallBrokenFloor(N_FLOORS);
+    BallBrokenFloor ballBrokenFloor;
 
     @Test
-    void test() {
+    void minBrokenFloorTest() {
+        ballBrokenFloor = new BallBrokenFloor(N_FLOORS);
         assertEquals(ballBrokenFloor.getBrokenFloor(), getMinBrokenFloor(ballBrokenFloor));
     }
 
